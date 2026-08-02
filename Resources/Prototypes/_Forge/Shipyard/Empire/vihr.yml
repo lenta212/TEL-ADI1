@@ -3,11 +3,11 @@
   parent: BaseVessel
   name: EPS Вихрь
   description: Вихрь - шаттл для разведки и патруля в одиночку, так же может перевозить или забирать тех, кто остался без шаттла, отлично ломает двигатели.
-  price: 50000 # PR:206, fix Shipyard test
+  price: 43000
   category: Small
   group: Empire
   access: Empire
-  shuttlePath: /Maps/_Forge/Shuttles/Empire/vihr.yml
+  shuttlePath: /SharedMaps/_Forge/Shuttles/Empire/vihr.yml
   guidebookPage: Null
   class:
   - Patrol
@@ -17,7 +17,7 @@
 - type: gameMap
   id: vihr
   mapName: 'EPS Вихрь'
-  mapPath: /Maps/_Forge/Shuttles/Empire/vihr.yml
+  mapPath: /SharedMaps/_Forge/Shuttles/Empire/vihr.yml
   minPlayers: 0
   stations:
     vihr:

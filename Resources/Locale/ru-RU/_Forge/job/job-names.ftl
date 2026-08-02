@@ -2,6 +2,7 @@
 department-Empire = Священная Империя Вермиллионов
 department-Renegates = Восставшие колонии Ренегатов
 department-TSF = Транс-Солнечная Федерация
+department-UnionOfSovietSocialistPlanets = Союз Советских Социалистических Планет
 
 # Outpost
 forge-job-name-outpostmedic = Врач АФ
@@ -10,8 +11,8 @@ forge-job-name-outpostservice = Работник АФ
 job-name-service-worker = Корпоративный Рабочий НТ
 # Syndicate
 forge-job-name-syndicommander = Командир
-forge-job-name-medsyn = Санитар Синдиката
-forge-job-name-engineersyn = Техник Синдиката
+forge-job-name-medsyn = Санитар Горлекса
+forge-job-name-engineersyn = Техник Горлекса
 forge-job-name-smuggler = Контрабандист
 forge-job-name-smugglerbodyguard = Телохранитель
 forge-job-name-stormtrooper = Штурмовик
@@ -65,14 +66,14 @@ JobTsfCommandingOfficer = ТСФ Командующий Офицер
 JobTsfExecutiveOfficer = ТСФ Исполнительный Офицер
 JobTsfSeniorOfficer = ТСФ Старший Офицер
 JobTsfSeniorAide = ТСФ Младший Офицер
-JobTsfAmbassador = Посол Федерации
+JobTsfAmbassador = ТСФ Посол Федерации
 JobTsfRanger = ТСФ Морпех
 JobTsfRecruit = ТСФ Новобранец
 job-name-tsf-commanding-officer = ТСФ Командующий Офицер
 job-name-tsf-senior-officer = ТСФ Старший Офицер
 job-name-tsf-executive-officer = ТСФ Исполнительный Офицер
 job-name-tsf-senior-aide = ТСФ Младший Офицер
-job-name-tsf-ambassador = Посол Федерации
+job-name-tsf-ambassador = ТСФ Посол Федерации
 job-name-tsf-ranger = ТСФ Морпех
 job-name-tsf-recruit = ТСФ Новобранец
 JobTsfEngineer = ТСФ Боевой Техник
@@ -83,3 +84,7 @@ job-name-tsf-crew = ТСФ Экипаж «Халкиона»
 job-name-tsf-crewofficer = ТСФ Офицер «Халкиона»
 job-name-nt-medic-pilot = Пилот TTI
 job-name-nt-medic-gunner = Стрелок TTI
+
+# Tel-Adi
+department-TelAdi = Tel-Adi
+forge-job-name-tel-adi-worker = ТА Работник

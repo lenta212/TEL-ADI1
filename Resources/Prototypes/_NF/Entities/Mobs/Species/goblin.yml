@@ -39,6 +39,8 @@
     - GoblinMutter
     - GoblinThroatSinging
     - Hiss
+    - Surprise # Forge-Change
+    - Belch    # Forge-Change
   - type: DamageOnHighSpeedImpact
     damage:
       types:
@@ -107,6 +109,14 @@
         probability: 0.2
   - type: Rummager # DeltaV Code
   - type: AlwaysTriggerMousetrap # DeltaV Code
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - Humanoid # Mono
+    - GoblinCraft # Forge-Change
 
 - type: entity
   save: false

@@ -8,49 +8,44 @@
   table: !type:GroupSelector
     children:
     - !type:EntSelector
-      id: SpaceCash1000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 5
+        value: 30000
     - !type:EntSelector
-      id: SpaceCash10000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 2
+        value: 40000
 
 - type: entityTable
   id: PoiTreasuryLootCashTickMedium
   table: !type:GroupSelector
     children:
     - !type:EntSelector
-      id: SpaceCash100
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 12
+        value: 50000
     - !type:EntSelector
-      id: SpaceCash1000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 5
-    - !type:EntSelector
-      id: SpaceCash10000
-      amount: !type:ConstantNumberSelector
-        value: 2
-      weight: 0.35
+        value: 60000
 
 - type: entityTable
   id: PoiTreasuryLootCashTickLarge
   table: !type:GroupSelector
     children:
     - !type:EntSelector
-      id: SpaceCash100
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 8
+        value: 60000
     - !type:EntSelector
-      id: SpaceCash1000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 3
+        value: 80000
     - !type:EntSelector
-      id: SpaceCash10000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 5
-      weight: 0.25
+        value: 100000
+      weight: 0.5
 
 # Legacy aliases (часовня, свалка, био)
 - type: entityTable
@@ -75,76 +70,33 @@
   id: PoiTreasuryLootMedTier2
   table: !type:GroupSelector
     children:
-    - id: MedkitAdvancedFilled
-    - id: MedkitCombatFilled
-    - id: StimkitFilled
-      weight: 0.2
+    - !type:EntSelector
+      id: MedkitAdvancedFilled
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - !type:EntSelector
+      id: MedkitCombatFilled
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - !type:EntSelector
+      id: StimkitFilled
+      weight: 0.5
 
 # Отдельные T2 расходники (реже полного набора).
 - type: entityTable
   id: PoiTreasuryLootMedLight
   table: !type:GroupSelector
     children:
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootMedTier2
-      weight: 2.5
     - id: BrutepackAdvanced1
+      amount: !type:ConstantNumberSelector
+        value: 60
     - id: OintmentAdvanced1
-    - !type:EntSelector
-      id: MedicatedSuture
       amount: !type:ConstantNumberSelector
-        value: 2
-    - !type:EntSelector
-      id: RegenerativeMesh
-      amount: !type:ConstantNumberSelector
-        value: 2
-
-# Патроны (чем калибр крупнее — тем реже).
-- type: entityTable
-  id: PoiTreasuryLootAmmoCombat
-  table: !type:GroupSelector
-    children:
-    - id: Magazine9x19mmPistolFMJ
-    - !type:EntSelector
-      id: Magazine9x19mmPistolFMJ
-      amount: !type:ConstantNumberSelector
-        value: 2
-    - id: Magazine9x19mmPistolHighCapacityFMJ
-    - id: Magazine9x19mmSubMachineGunFMJ
-    - !type:EntSelector
-      id: Magazine9x19mmSubMachineGunFMJ
-      amount: !type:ConstantNumberSelector
-        value: 2
-    - id: Magazine762x39mmLowCapacityFMJ
-      weight: 0.35
-    - id: Magazine762x39mmFMJ
-      weight: 0.25
-    - id: MagazineNovaliteC1
-      weight: 0.15
-    - id: Magazine762x51mmFMJ
-      weight: 0.08
-
-- type: entityTable
-  id: PoiTreasuryLootAmmoLight
-  table: !type:GroupSelector
-    children:
-    - id: Magazine9x19mmPistolFMJ
-    - id: Magazine9x19mmPistolPractice
-      weight: 0.4
+        value: 60
 
 # Оружие + магазины (комплект за один тик).
 - type: entityTable
   id: PoiTreasuryLootKitPistol9mm
-  table: !type:AllSelector
-    children:
-    - id: WeaponPistolMk58Expedition
-    - !type:EntSelector
-      id: Magazine9x19mmPistolFMJ
-      amount: !type:ConstantNumberSelector
-        value: 2
-
-- type: entityTable
-  id: PoiTreasuryLootKitPistol9mmAlt
   table: !type:AllSelector
     children:
     - id: WeaponPistolViper
@@ -154,12 +106,22 @@
         value: 2
 
 - type: entityTable
-  id: PoiTreasuryLootKitRevolver556
+  id: PoiTreasuryLootKitPistol9mmAlt
   table: !type:AllSelector
     children:
-    - id: WeaponRevolverArgenti
+    - id: WeaponSubMachineGunVector9x19mm
     - !type:EntSelector
-      id: SpeedLoader556x45mmFMJ
+      id: Magazine9x19mmSubMachineGunFMJ
+      amount: !type:ConstantNumberSelector
+        value: 2
+
+- type: entityTable
+  id: PoiTreasuryLootKitRevolver45
+  table: !type:AllSelector
+    children:
+    - id: WeaponRevolverPython
+    - !type:EntSelector
+      id: SpeedLoader45_magnumFMJ
       amount: !type:ConstantNumberSelector
         value: 2
 
@@ -174,24 +136,30 @@
         value: 3
 
 - type: entityTable
-  id: PoiTreasuryLootKitRifle762
+  id: PoiTreasuryLootKitRifle73
   table: !type:AllSelector
     children:
-    - id: WeaponRifleGestioExpedition
+    - id: WeaponSubMachineGunMla73
     - !type:EntSelector
-      id: Magazine762x39mmFMJ
+      id: Magazine635x40mmCaseless
+      amount: !type:ConstantNumberSelector
+        value: 4
+
+- type: entityTable
+  id: PoiTreasuryLootKitShotgunEnforcer
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunEnforcerExpedition
+    - !type:EntSelector
+      id: AmmoBox12_gaugeBuckshot
       amount: !type:ConstantNumberSelector
         value: 2
 
 - type: entityTable
-  id: PoiTreasuryLootKitRifleNovalite
+  id: PoiTreasuryLootKitAdvancedLaserExpedition
   table: !type:AllSelector
     children:
-    - id: WeaponRifleNovaliteC1Expedition
-    - !type:EntSelector
-      id: MagazineNovaliteC1
-      amount: !type:ConstantNumberSelector
-        value: 2
+    - id: WeaponAdvancedLaserExpedition
 
 - type: entityTable
   id: PoiTreasuryLootWeaponsGuns
@@ -199,35 +167,41 @@
     children:
     - !type:NestedSelector
       tableId: PoiTreasuryLootKitPistol9mm
+      weight: 0.6
     - !type:NestedSelector
       tableId: PoiTreasuryLootKitPistol9mmAlt
-      weight: 0.85
+      weight: 0.6
     - !type:NestedSelector
-      tableId: PoiTreasuryLootKitRevolver556
-      weight: 0.55
+      tableId: PoiTreasuryLootKitRevolver45
+      weight: 0.6
     - !type:NestedSelector
       tableId: PoiTreasuryLootKitSMG9mm
-      weight: 0.45
+      weight: 0.6
     - !type:NestedSelector
-      tableId: PoiTreasuryLootKitRifle762
-      weight: 0.12
+      tableId: PoiTreasuryLootKitRifle73
+      weight: 0.6
     - !type:NestedSelector
-      tableId: PoiTreasuryLootKitRifleNovalite
-      weight: 0.08
+      tableId: PoiTreasuryLootKitShotgunEnforcer
+      weight: 0.6
     - !type:NestedSelector
-      tableId: PoiTreasuryLootAmmoCombat
-      weight: 1.8
+      tableId: PoiTreasuryLootKitAdvancedLaserExpedition
+      weight: 0.6
 
 - type: entityTable
   id: PoiTreasuryLootWeaponsMelee
   table: !type:GroupSelector
     children:
-    - id: CombatKnife
-    - id: SurvivalKnife
-    - id: Machete
-      weight: 0.5
+    - !type:EntSelector
+      id: CombatKnife
+    - !type:EntSelector
+      id: PlasteelArmingSword
+    - !type:EntSelector
+      id: Cutlass  
+    - !type:EntSelector
+      id: EnergySword
+      weight: 0.1
 
-# Инженерные материалы: частые стаки, редкие — мизерный шанс.
+# Инженерные материалы
 - type: entityTable
   id: PoiTreasuryLootMaterialsCommon
   table: !type:GroupSelector
@@ -235,38 +209,19 @@
     - !type:EntSelector
       id: SheetSteel1
       amount: !type:ConstantNumberSelector
-        value: 8
+        value: 250
     - !type:EntSelector
-      id: SheetSteel1
+      id: SheetPlastic1
       amount: !type:ConstantNumberSelector
-        value: 5
-    - !type:EntSelector
-      id: SheetPlasteel1
-      amount: !type:ConstantNumberSelector
-        value: 5
-    - !type:EntSelector
-      id: SheetPlasteel1
-      amount: !type:ConstantNumberSelector
-        value: 3
-    - !type:EntSelector
-      id: CableMVStack1
-      amount: !type:ConstantNumberSelector
-        value: 2
-    - !type:EntSelector
-      id: CableHVStack1
-      amount: !type:ConstantNumberSelector
-        value: 2
+        value: 250
     - !type:EntSelector
       id: SheetGlass1
       amount: !type:ConstantNumberSelector
-        value: 4
-    - id: ScrapSteel
+        value: 250
     - !type:EntSelector
-      id: ScrapSteel
+      id: MaterialDurathread1
       amount: !type:ConstantNumberSelector
-        value: 3
-    - id: MaterialCardboard1
-    - id: InflatableWallStack1
+        value: 250
 
 - type: entityTable
   id: PoiTreasuryLootMaterialsRare
@@ -275,19 +230,157 @@
     - !type:EntSelector
       id: SheetPlasma1
       amount: !type:ConstantNumberSelector
-        value: 5
+        value: 200
     - !type:EntSelector
       id: SheetUranium1
       amount: !type:ConstantNumberSelector
-        value: 3
-      weight: 0.06
-    - id: DiamondOre1
-      weight: 0.04
+        value: 200
     - !type:EntSelector
       id: IngotGold1
       amount: !type:ConstantNumberSelector
-        value: 3
-      weight: 0.05
+        value: 200
+    - !type:EntSelector
+      id: IngotSilver1
+      amount: !type:ConstantNumberSelector
+        value: 200
+        
+# Перерабатываемый хлам
+- type: entityTable
+  id: PoiTreasuryLootMaterialsScrap
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: ScrapGlass
+    - !type:EntSelector
+      id: ScrapFaxMachine
+    - !type:EntSelector
+      id: ScrapMedkit
+    - !type:EntSelector
+      id: ScrapFireExtinguisher
+    - !type:EntSelector
+      id: ScrapPAIGold
+    - !type:EntSelector
+      id: ScrapOre1
+      amount: !type:ConstantNumberSelector
+        value: 50
+
+# Руда 
+- type: entityTable
+  id: PoiTreasuryLootMaterialsOre
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: DiamondOre1
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - !type:EntSelector
+      id: LithiumOre1
+      amount: !type:ConstantNumberSelector
+        value: 5
+    - !type:EntSelector
+      id: BananiumOre1
+      amount: !type:ConstantNumberSelector
+        value: 20
+    - !type:EntSelector
+      id: SteelOre1
+      amount: !type:ConstantNumberSelector
+        value: 25
+    - !type:EntSelector
+      id: PlasmaOre1
+      amount: !type:ConstantNumberSelector
+        value: 20
+    - !type:EntSelector
+      id: SpaceQuartz1
+      amount: !type:ConstantNumberSelector
+        value: 20
+    - !type:EntSelector
+      id: UraniumOre1
+      amount: !type:ConstantNumberSelector
+        value: 20
+    - !type:EntSelector
+      id: SilverOre1
+      amount: !type:ConstantNumberSelector
+        value: 20
+    - !type:EntSelector
+      id: GoldOre1
+      amount: !type:ConstantNumberSelector
+        value: 20
+
+# Research loot 
+- type: entityTable
+  id: PoiTreasuryLootResearchTech
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: ResearchDisk10000
+      amount: !type:ConstantNumberSelector
+        value: 8
+    - !type:EntSelector
+      id: ResearchDisk65000
+      amount: !type:ConstantNumberSelector
+        value: 4
+      weight: 0.5
+
+- type: entityTable
+  id: PoiTreasuryLootResearchTechDisks
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: TechDiskTSFLecter
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskCivCTLA50
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskEnergyWeapons
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskRogueTools
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskTSFAnnie
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskUniversalShipAmmo
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskM90
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskUniversalShipAmmoAdvanced
+      amount: !type:ConstantNumberSelector
+        value: 1
+    - !type:EntSelector
+      id: TechDiskTSFICWS
+      amount: !type:ConstantNumberSelector
+        value: 1
+
+- type: entityTable
+  id: PoiTreasuryLootResearchTechCircuitboard
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: WeaponTurretAK570Circuitboard
+    - !type:EntSelector
+      id: WeaponTurretLongbowCircuitboard
+    - !type:EntSelector
+      id: MachineDriveCTLA50Circuitboard
+    - !type:EntSelector
+      id: WeaponTurretM220Circuitboard
+    - !type:EntSelector
+      id: WeaponLaserTurretPrometheusCircuitboard
+    - !type:EntSelector
+      id: WeaponTurretCyrexaCircuitboard
+    - !type:EntSelector
+      id: GCSUltraUpgradeCircuitboard
+      weight: 0.1
 
 # --- Profile tables -----------------------------------------------------------
 
@@ -297,18 +390,17 @@
   table: !type:GroupSelector
     children:
     - !type:EntSelector
-      id: SpaceCash100
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 10
+        value: 20000
     - !type:EntSelector
-      id: SpaceCash10
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 20
+        value: 30000
     - !type:EntSelector
-      id: SpaceCash1000
+      id: SpaceCash
       amount: !type:ConstantNumberSelector
-        value: 3
-      weight: 0.4
+        value: 40000
 
 # Грузовое: кэш + логистика.
 - type: entityTable
@@ -316,14 +408,14 @@
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickMedium
-      weight: 1.5
+      tableId: PoiTreasuryLootTrade
+      weight: 2
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsCommon
-      weight: 3
+      weight: 1
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.06
+      weight: 0.5
 
 - type: entityTable
   id: PoiTreasuryLootRestStop
@@ -332,9 +424,6 @@
     - !type:NestedSelector
       tableId: PoiTreasuryLootCashTickSmall
       weight: 1.5
-    - id: FoodTinMRE
-    - id: DrinkBeerCan
-    - id: Cigarette
     - !type:EntSelector
       id: FoodTinMRE
       amount: !type:ConstantNumberSelector
@@ -352,34 +441,35 @@
       weight: 3
     - !type:NestedSelector
       tableId: PoiTreasuryLootMedLight
-      weight: 1.2
-    - id: FoodTinBeans
+      weight: 1.5
     - !type:EntSelector
       id: FoodTinBeans
       amount: !type:ConstantNumberSelector
         value: 2
       weight: 0.5
-
+      
 - type: entityTable
   id: PoiTreasuryLootCasino
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
       tableId: PoiTreasuryLootCashTickMedium
-      weight: 2
-    - id: Cigarette
-    - id: CigPackMixedMedical
-    - id: CigarGoldCase
-      weight: 0.3
-    - id: GoldenPlunger
-      weight: 0.05
+      weight: 1
+    - !type:EntSelector
+      id: GoldRingGem
+      amount: !type:ConstantNumberSelector
+        value: 5
+      weight: 0.5
+    - !type:EntSelector
+      id: SilverRingDiamond
+      amount: !type:ConstantNumberSelector
+        value: 5
+      weight: 0.5
 
 - type: entityTable
   id: PoiTreasuryLootCombat
   table: !type:GroupSelector
     children:
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickMedium
     - !type:NestedSelector
       tableId: PoiTreasuryLootWeaponsGuns
       weight: 2.5
@@ -388,35 +478,26 @@
     - !type:NestedSelector
       tableId: PoiTreasuryLootMedTier2
       weight: 2
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootMedLight
-      weight: 1
 
 - type: entityTable
   id: PoiTreasuryLootIndustrial
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickSmall
-    - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsCommon
-      weight: 4
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.08
-    - id: PowerCellMedium
-    - id: PowerCellHigh
-      weight: 0.25
+      weight: 2
+    - !type:EntSelector      
+      id: SheetPlastitanium1   
+      amount: !type:ConstantNumberSelector
+        value: 15
+      weight: 0.5
 
 - type: entityTable
   id: PoiTreasuryLootChapel
   table: !type:GroupSelector
     children:
-    - !type:EntSelector
-      id: SpaceCash
-      amount: !type:ConstantNumberSelector
-        value: 8
-    - id: Candle
+    - !type:NestedSelector
+      tableId: PoiTreasuryLootCashTickMedium
     - id: Bible
     - id: Candle
       weight: 0.5
@@ -428,22 +509,14 @@
     - !type:NestedSelector
       tableId: PoiTreasuryLootCashTickLarge
       weight: 2
-    - id: Telecrystal1
-      weight: 0.45
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootWeaponsGuns
-      weight: 3
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootWeaponsMelee
+    - !type:EntSelector
+      id: Telecrystal1
+      amount: !type:ConstantNumberSelector
+        value: 40
+      weight: 1
     - !type:NestedSelector
       tableId: PoiTreasuryLootMedTier2
       weight: 2.5
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootKitRifle762
-      weight: 0.18
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootKitRifleNovalite
-      weight: 0.1
 
 - type: entityTable
   id: PoiTreasuryLootScrap
@@ -451,17 +524,13 @@
     children:
     - !type:NestedSelector
       tableId: PoiTreasuryLootCashTickSmall
+      weight: 0.3
+    - !type:NestedSelector
+      tableId: PoiTreasuryLootMaterialsScrap
+      weight: 2
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsCommon
-      weight: 3
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.05
-    - id: Crowbar
-    - id: Wirecutter
-    - id: Welder
-    - id: PowerDrill
-      weight: 0.4
+      weight: 0.1
 
 - type: entityTable
   id: PoiTreasuryLootScience
@@ -472,102 +541,56 @@
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsCommon
       weight: 2
-    - !type:EntSelector
-      id: SheetPlasma1
-      amount: !type:ConstantNumberSelector
-        value: 4
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.1
-    - id: Beaker
-    - id: AnomalyScanner
-      weight: 0.35
-    - id: GasAnalyzer
+      weight: 0.5
 
 - type: entityTable
   id: PoiTreasuryLootMining
   table: !type:GroupSelector
     children:
-    - !type:EntSelector
-      id: SheetSteel1
-      amount: !type:ConstantNumberSelector
-        value: 8
-    - !type:EntSelector
-      id: SheetPlasteel1
-      amount: !type:ConstantNumberSelector
-        value: 5
-    - !type:EntSelector
-      id: SheetPlasma1
-      amount: !type:ConstantNumberSelector
-        value: 3
     - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.12
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickSmall
-      weight: 0.4
-    - id: Pickaxe
-    - id: OreBag
-      weight: 0.5
-
+      tableId: PoiTreasuryLootMaterialsOre
+      
 - type: entityTable
   id: PoiTreasuryLootTech
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickSmall
+      tableId: PoiTreasuryLootCashTickMedium
+      weight: 1
     - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsCommon
-      weight: 3.5
+      tableId: PoiTreasuryLootResearchTech
+      weight: 2
     - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.07
-    - id: PowerCellMedium
-    - id: PowerCellHigh
-      weight: 0.3
-    - id: Flash
+      tableId: PoiTreasuryLootResearchTechDisks
+      weight: 2.5
 
 - type: entityTable
   id: PoiTreasuryLootDungeonTech
   table: !type:GroupSelector
     children:
-    - id: ResearchDisk5000
-    - id: ResearchDisk10000
-      weight: 0.4
     - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsCommon
-      weight: 2
-    - !type:EntSelector
-      id: SheetPlasteel1
-      amount: !type:ConstantNumberSelector
-        value: 6
+      tableId: PoiTreasuryLootResearchTechDisks
+      weight: 3
     - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.05
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickMedium
-      weight: 0.8
+      tableId: PoiTreasuryLootResearchTechDisks
+      weight: 1.5
 
 - type: entityTable
   id: PoiTreasuryLootBio
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: PoiTreasuryLootCashTickSmall
-    - !type:NestedSelector
       tableId: PoiTreasuryLootMedTier2
       weight: 3.5
     - !type:NestedSelector
       tableId: PoiTreasuryLootMedLight
       weight: 1.5
-    - id: Beaker
-    - id: Syringe
     - !type:EntSelector
-      id: Bloodpack1
+      id: OmnizineChemistryBottle
       amount: !type:ConstantNumberSelector
-        value: 2
-    - id: PillCanisterBicaridine
-    - id: EpinephrineChemistryBottle
+        value: 1
 
 - type: entityTable
   id: PoiTreasuryLootFuel
@@ -575,15 +598,11 @@
     children:
     - id: WeldingFuelTank
     - id: PlasmaTank
-    - id: OxygenTankFilled
     - !type:NestedSelector
       tableId: PoiTreasuryLootCashTickSmall
     - !type:NestedSelector
       tableId: PoiTreasuryLootMaterialsCommon
-      weight: 2.5
-    - !type:NestedSelector
-      tableId: PoiTreasuryLootMaterialsRare
-      weight: 0.04
+      weight: 1.5
 
 - type: entityTable
   id: PoiTreasuryLootGrifty

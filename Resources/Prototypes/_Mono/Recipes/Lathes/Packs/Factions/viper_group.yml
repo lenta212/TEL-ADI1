@@ -4,7 +4,15 @@
   - ClothingNeckViperGroupMantle
   - ClothingUniformJumpsuitViperGroupUniform
   - ClothingUniformJumpsuitViperGroupTurtleneck
+  - ClothingUniformJumpsuitViperGroupTankTop # Forge-change
   - ClothingOuterHardsuitViperGroupInitiate
   - ClothingOuterHardsuitViperGroupStandard
   - ClothingOuterHardsuitViperGroupMedic
   - ClothingOuterHardsuitViperGroupJuggernaut
+  - ClothingShoesBootsMagViperGroup # Forge-change
+  - ShipVoucherVGWolf
+
+- type: latheRecipePack
+  id: MonoViperGroupStatic
+  recipes:
+  - VGTechfabMachineCircuitboard

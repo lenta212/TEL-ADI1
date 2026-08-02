@@ -3,11 +3,11 @@
   parent: BaseVessel
   name: EES Вектор
   description: Вектор - средний инженерный шаттл для починки тех, кто был выведен из строя. Для боя не предназначен, но может продержаться какое-то время.
-  price: 195000 # PR:206, fix Shipyard test
+  price: 162000
   category: Medium
   group: Empire
   access: Empire
-  shuttlePath: /Maps/_Forge/Shuttles/Empire/vector.yml
+  shuttlePath: /SharedMaps/_Forge/Shuttles/Empire/vector.yml
   guidebookPage: Null
   class:
   - Engineering
@@ -17,7 +17,7 @@
 - type: gameMap
   id: vector
   mapName: 'EES Вектор'
-  mapPath: /Maps/_Forge/Shuttles/Empire/vector.yml
+  mapPath: /SharedMaps/_Forge/Shuttles/Empire/vector.yml
   minPlayers: 0
   stations:
     vector:

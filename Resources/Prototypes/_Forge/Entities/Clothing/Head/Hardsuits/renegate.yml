@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ShowSecurityIcons ]
   id: ClothingHeadHelmetHardsuitRenegatebsii20
   name: BSII-20 "Requiem" helmet
   description: The interchangeable helmet system for the majority of BSII-20 hardsuits.
@@ -13,8 +13,15 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: NightVision
-    flashDurationMultiplier: 3.5
-    isEquipment: true
+    relayOverlay: true
+    goggleEffect: true
+    action: ActionToggleNightVision
+    viewCircleRadius: 400
+    viewCircleCount: 2
+    viewCircleSpacing: 280
+    phosphorColor: "#00FF00"
+    lightingColor: "#FFFFFF32"
+
   - type: Armor
     modifiers:
       coefficients:
@@ -30,7 +37,7 @@
     - HeadSide
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ShowSecurityIcons ]
   id: ClothingHeadHelmetHardsuitRenegatebsii30
   name: BSII-30 "Locksmith" helmet
   description: The interchangeable helmet system for the majority of BSII-20 hardsuits.
@@ -44,8 +51,15 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: NightVision
-    flashDurationMultiplier: 3.5
-    isEquipment: true
+    relayOverlay: true
+    goggleEffect: true
+    action: ActionToggleNightVision
+    viewCircleRadius: 400
+    viewCircleCount: 2
+    viewCircleSpacing: 280
+    phosphorColor: "#00FF00"
+    lightingColor: "#FFFFFF32"
+
   - type: Armor
     modifiers:
       coefficients:
@@ -61,7 +75,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons, ShowSecurityIcons ]
   id: ClothingHeadHelmetHardsuitRenegatecriii200
   name: CRIII-200 "Bug" helmet
   description: The interchangeable helmet system for the majority of CRIII-200 hardsuits.
@@ -75,8 +89,15 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: NightVision
-    flashDurationMultiplier: 3.5
-    isEquipment: true
+    relayOverlay: true
+    goggleEffect: true
+    action: ActionToggleNightVision
+    viewCircleRadius: 400
+    viewCircleCount: 2
+    viewCircleSpacing: 280
+    phosphorColor: "#00FF00"
+    lightingColor: "#FFFFFF32"
+
   - type: ThermalVision
     flashDurationMultiplier: 2
     pulseTime: 3
@@ -97,7 +118,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons, ShowSecurityIcons ]
   id: ClothingHeadHelmetHardsuitRenegateoiii18
   name: OIII-18 "Omega" helmet
   description: The interchangeable helmet system for the majority of OIII-18 hardsuits.
@@ -111,8 +132,15 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: NightVision
-    flashDurationMultiplier: 3.5
-    isEquipment: true
+    relayOverlay: true
+    goggleEffect: true
+    action: ActionToggleNightVision
+    viewCircleRadius: 400
+    viewCircleCount: 2
+    viewCircleSpacing: 280
+    phosphorColor: "#00FF00"
+    lightingColor: "#FFFFFF32"
+
   - type: ThermalVision
     flashDurationMultiplier: 2
     pulseTime: 3
@@ -133,7 +161,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ShowMedicalIcons, ShowSecurityIcons ]
   id: ClothingHeadHelmetHardsuitRenegateyiv3020
   name: YIV3020 "Svyatogor" helmet
   description: The interchangeable helmet system for the majority of YIV3020 hardsuits.
@@ -147,8 +175,15 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: NightVision
-    flashDurationMultiplier: 3.5
-    isEquipment: true
+    relayOverlay: true
+    goggleEffect: true
+    action: ActionToggleNightVision
+    viewCircleRadius: 400
+    viewCircleCount: 2
+    viewCircleSpacing: 280
+    phosphorColor: "#00FF00"
+    lightingColor: "#FFFFFF32"
+
   - type: ThermalVision
     flashDurationMultiplier: 2
     pulseTime: 3

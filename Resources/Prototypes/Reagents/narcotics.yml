@@ -45,57 +45,22 @@
     Narcotic:
       effects:
       - !type:MovespeedModifier
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.75
         walkSpeedModifier: 1.25
         sprintSpeedModifier: 1.25
-      - !type:MovespeedModifier
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.75
-          max: 1.0
-        walkSpeedModifier: 1.0
-        sprintSpeedModifier: 1.0
-        # Forge-change-end
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
       - !type:Jitter
       - !type:GenericStatusEffect
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.75
-        # Forge-change-end
         key: Stun
         time: 3
         type: Remove
       - !type:GenericStatusEffect
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.6
-        # Forge-change-end
         key: KnockedDown
         time: 3
         type: Remove
       - !type:GenericStatusEffect
         conditions:
-        # Forge-change-start
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.8
-        # Forge-change-end
         - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
@@ -103,36 +68,42 @@
         time: 10
         type: Remove
       - !type:GenericStatusEffect # goob edit
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.6
-        # Forge-change-end
         key: Adrenaline
         component: StamcritResist
         time: 5
       - !type:GenericStatusEffect # goob edit
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Desoxyephedrine
-          min: 0.0
-          max: 0.3
-        # Forge-change-end
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
-      - !type:AddictiveEffect # Forge-change
-        addictionId: Desoxyephedrine
-        toleranceGain: 0.029 # 15 = 0.435
+      # Forge-change-start
+      - !type:ToleranceEffect
+        # hidden: true
+        reagent: Desoxyephedrine
+        amount: 0.04
+        target: Brain
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Brain
+            reagent: Desoxyephedrine
+            min: 0.3
+            max: 1.0
+        syndrome: StimulantAddiction
+        severity: 0.25
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end
     Medicine:
       effects:
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentThreshold
           min: 20
+      - !type:SuppressEffect # Forge-change
+        # hidden: true
+        syndrome: SedativeAddiction
+        duration: 280
 
 - type: reagent
   id: Ephedrine
@@ -179,13 +150,6 @@
         time: 1
         type: Remove
       - !type:GenericStatusEffect
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Ephedrine
-          min: 0.0
-          max: 0.65
-        # Forge-change-end
         key: KnockedDown
         time: 1
         type: Remove
@@ -194,12 +158,6 @@
         - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        # Forge-change-start
-        - !type:AddictionCondition
-          addictionId: Ephedrine
-          min: 0.0
-          max: 0.85
-        # Forge-change-end
         key: Drowsiness
         time: 10
         type: Remove
@@ -209,36 +167,42 @@
         type: Local
         probability: 0.05
       - !type:GenericStatusEffect # goob edit
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Ephedrine
-          min: 0.0
-          max: 0.85
-        # Forge-change-end
         key: Adrenaline
         component: StamcritResist
         time: 5
       - !type:GenericStatusEffect # goob edit
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Ephedrine
-          min: 0.0
-          max: 0.7
-        # Forge-change-end
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
-      - !type:AddictiveEffect # Forge-change
-        addictionId: Ephedrine
-        toleranceGain: 0.03 # 15 = 0.45
+      # Forge-change-start
+      - !type:ToleranceEffect
+        # hidden: true
+        reagent: Ephedrine
+        amount: 0.025
+        target: Brain
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Brain
+            reagent: Ephedrine
+            min: 0.6
+            max: 1.0
+        syndrome: StimulantAddiction
+        severity: 0.3
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end
     Medicine:
       effects:
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentThreshold
           min: 30
+      - !type:SuppressEffect # Forge-change
+        # hidden: true
+        syndrome: SedativeAddiction
+        duration: 280
 
 - type: reagent
   id: Stimulants
@@ -287,24 +251,10 @@
         reagent: ChloralHydrate
         amount: -10
       - !type:GenericStatusEffect
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Stimulants
-          min: 0.0
-          max: 0.6
-        # Forge-change-end
         key: Stun
         time: 3
         type: Remove
       - !type:GenericStatusEffect
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Stimulants
-          min: 0.0
-          max: 0.5
-        # Forge-change-end
         key: KnockedDown
         time: 3
         type: Remove
@@ -322,12 +272,6 @@
         - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        # Forge-change-start
-        - !type:AddictionCondition
-          addictionId: Stimulants
-          min: 0.0
-          max: 0.85
-        # Forge-change-end
         key: Drowsiness
         time: 10
         type: Remove
@@ -337,18 +281,27 @@
         time: 5
       - !type:GenericStatusEffect # goob edit
         key: Adrenaline
-        # Forge-change-start
-        conditions:
-        - !type:AddictionCondition
-          addictionId: Stimulants
-          min: 0.0
-          max: 0.8
-        # Forge-change-end
         component: IgnoreSlowOnDamage
         time: 5
-      - !type:AddictiveEffect # Forge-change
-        addictionId: Stimulants
-        toleranceGain: 0.025 # 15 = 0.375
+      # Forge-change-start
+      - !type:ToleranceEffect
+        # hidden: true
+        reagent: Stimulants
+        amount: 0.01
+        target: Brain
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Brain
+            reagent: Stimulants
+            min: 0.4
+            max: 1.0
+        syndrome: StimulantAddiction
+        severity: 0.3
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end
     Medicine:
       metabolismRate: 1.0
       effects:
@@ -365,6 +318,11 @@
             groups:
               Burn: -1
               Brute: -1
+        # Forge-change
+        - !type:SuppressEffect
+          # hidden: true
+          syndrome: SedativeAddiction
+          duration: 340
 
 - type: reagent
   id: THC
@@ -428,32 +386,64 @@
             Shock: -0.1
             Cold: -0.1
             Radiation: -0.1
-        # Forge-change-start
-      - !type:AddictiveEffect
+      # Forge-change-start
+      - !type:ToleranceEffect
+        hidden: true
         conditions:
-        - !type:AddictionCondition
-          addictionId: Nicotine
-          min: 0.0
-          max: 0.33
-        addictionId: Nicotine
-        toleranceGain: 0.099
-      - !type:AddictiveEffect
+          - !type:ToleranceCondition
+            source: Body
+            reagent: Nicotine
+            min: 0.0
+            max: 0.1
+        reagent: Nicotine
+        amount: 0.01
+        target: Body
+      - !type:ToleranceEffect
+        hidden: true
         conditions:
-        - !type:AddictionCondition
-          addictionId: Nicotine
-          min: 0.33
-          max: 0.66
-        addictionId: Nicotine
-        toleranceGain: 0.08
-      - !type:AddictiveEffect
+          - !type:ToleranceCondition
+            source: Body
+            reagent: Nicotine
+            min: 0.1
+            max: 0.25
+        reagent: Nicotine
+        amount: 0.008
+        target: Body
+      - !type:ToleranceEffect
+        hidden: true
         conditions:
-        - !type:AddictionCondition
-          addictionId: Nicotine
-          min: 0.66
-          max: 1.0
-        addictionId: Nicotine
-        toleranceGain: 0.06
-        # Forge-change-end
+          - !type:ToleranceCondition
+            source: Body
+            reagent: Nicotine
+            min: 0.25
+            max: 0.4
+        reagent: Nicotine
+        amount: 0.006
+        target: Body
+      - !type:ToleranceEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Body
+            reagent: Nicotine
+            min: 0.4
+            max: 1.0
+        reagent: Nicotine
+        amount: 0.0035
+        target: Body
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Body
+            reagent: Nicotine
+            min: 0.3
+            max: 1.0
+        syndrome: NicotineAddiction
+        severity: 0.2
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -530,9 +520,25 @@
         type: Add
         time: 5
         refresh: false
-      - !type:AddictiveEffect # Forge-change
-        addictionId: SpaceDrugs
-        toleranceGain: 0.025 # 15 = 0.375
+      # Forge-change-start
+      - !type:ToleranceEffect
+        # hidden: true
+        reagent: SpaceDrugs
+        amount: 0.007
+        target: Brain
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Brain
+            reagent: SpaceDrugs
+            min: 0.6
+            max: 1.0
+        syndrome: SedativeAddiction
+        severity: 0.4
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end
 
 - type: reagent
   id: Bananadine
@@ -764,3 +770,22 @@
         type: Add
         time: 5
         refresh: false
+      # Forge-change-start
+      - !type:ToleranceEffect
+        # hidden: true
+        reagent: Happiness
+        amount: 0.004
+        target: Brain
+      - !type:SyndromeEffect
+        hidden: true
+        conditions:
+          - !type:ToleranceCondition
+            source: Brain
+            reagent: Happiness
+            min: 0.3
+            max: 1.0
+        syndrome: SedativeAddiction
+        severity: 0.2
+      - !type:GenericDescEffect
+        description: forge-reagent-tolerance-addiction
+      # Forge-change-end

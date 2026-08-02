@@ -18,6 +18,7 @@
         layer:
         - MachineLayer
   - type: Lathe
+    productValueModifier: 0.1 # Forge-change
   - type: MaterialStorage
     whitelist: # Frontier
       tags: # Frontier
@@ -265,6 +266,7 @@
     - CarpEquipment # Mono
     - UpgradeKits # Mono
     - UpgradeKits_Goob # Mono
+    - RCD # Mono!
     - SMSurgery # Shitmed Change
     # WD EDIT START
     - VisionGoggles
@@ -275,6 +277,7 @@
     # Forge-change
     - BSparts
     - ForgePublicWeapons
+
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - DynamicAmmoRecipePack
@@ -353,7 +356,9 @@
     - EngineeringBoardsGoob #Goob Factorio port
     - NanotrasenCircuitBoard # Forge-change
     - DrakeIndustriesCircuitBoards # Forge-change
+    - TelAdiCircuitBoards # Forge-change: Tel-Adi machine boards (centrifuge, scrap processor)
     - ReactorCircuitboards # FH edit
+    - BsEnergyCircuitsPack # Forge-Change
   - type: MaterialStorage
     whitelist:
       tags:
@@ -397,6 +402,7 @@
     - EngineeringBoardsGoob #Goob Factorio port
     - NanotrasenCircuitBoard # Forge-change
     - DrakeIndustriesCircuitBoards # Forge-change
+    - TelAdiCircuitBoards # Forge-change: Tel-Adi machine boards (centrifuge, scrap processor)
     - ReactorCircuitboards # FH edit
     - ForgeHyperConvectionFSGTier4Boards # Forge — FSG T4 boards (disk-unlocked), hyper imprinter only
 
@@ -429,6 +435,7 @@
     - IPCPartsStatic
     dynamicPacks:
     - NanotrasenMechWeapon # Forge-change
+    - TelAdiCyberneticsDynamic # Forge-change: Tel-Adi emergency limb implant (research-gated)
     - Robotics
     - BorgModules
     - MechParts
@@ -549,9 +556,6 @@
     - MonoRogueWeaponsDynamicMelee
     - MonoRogueWeaponsDynamicRanged
     - MonoRogueMiscDynamic
-    - MonoUSSPMiscDynamic
-    - MonoViperGroupDynamic
-    - MonoUSSPWeaponsDynamicRanged
     - UniversalShellAmmo
     - ResearchedExplosives
     - UniversalRailgunAmmo
@@ -705,6 +709,7 @@
     - NanotrasenClothing # Forge: AllTechPrintableTest only indexes dynamicPacks
     - NFPouches # Frontier
     - ClothingEmpirePack # Forge-change
+    - TelAdiClothingDynamic # Forge-change: Tel-Adi clothing (research-gated, see teladi_clothing.yml)
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -908,19 +913,22 @@
   name: medical biofabricator
   description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
   components:
+  # Forge-change-start
   - type: Sprite
-    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
+    sprite: Forge/Structures/Machines/organprinter.rsi
     snapCardinals: true
     layers:
-    - state: limbgrower_idleoff
+    - state: base
+    - state: screen
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: running
       map: ["enum.LatheVisualLayers.IsRunning"]
-  #    - state: limbgrower_idleoff
-  #      shader: unshaded
-  #      map: ["enum.PowerDeviceVisualLayers.Powered"]
-  #    - state: inserting
-  #      map: ["enum.MaterialStorageVisualLayers.Inserting"]
-  #    - state: panel
-  #      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  # Forge-change-end
   - type: Machine
     board: MedicalBiofabMachineBoard
   - type: MaterialStorage
@@ -929,8 +937,9 @@
       - Sheet
       - RawMaterial
   - type: Lathe
-    idleState: limbgrower_idleoff
-    runningState: limbgrower_idleon
+    idleState: base # Forge-change
+    runningState: running # Forge-change
+    unlitRunningState: screen_running # Forge-change
     productValueModifier: 0.05
     staticPacks:
     - MedicalSynthLimbsStatic

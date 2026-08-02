@@ -39,6 +39,8 @@
   - MailingUnitElectronics
   - SignalTimerElectronics
   - APCElectronics
+  - LargeAPCLightElectronics
+  - LargeAPCMediumElectronics
   - SMESMachineCircuitboard
   - SubstationMachineCircuitboard
   - WallmountSubstationElectronics
@@ -60,6 +62,7 @@
   - WelderExperimental
   - JawsOfLife
   - ExperimentalNaniteApplicator
+  - TrayGoggles # Delta-V
   # - Fulton # Frontier
   # - FultonBeacon # Frontier
 

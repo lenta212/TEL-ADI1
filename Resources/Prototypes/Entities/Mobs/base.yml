@@ -9,6 +9,7 @@
     noRot: true
     drawdepth: Mobs
   - type: MobCollision
+  - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -49,10 +50,9 @@
   - type: PassiveThermalSignature # Mono
     signature: 225 # if nothing else is generating heat, 30m radius, 60m with 4 mobs, 120 with 16
   - type: ThermalSignature # Mono
-  # Forge-change-start
-  - type: TTS
-  - type: Addiction
-  # Forge-change-end
+  #<Forge>
+  - type: TTS # Corvax-TTS
+  #<Forge>
 
 - type: entity
   save: false

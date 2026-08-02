@@ -133,6 +133,7 @@
     - WetFloorSign
     - DeskBell
     - BrbSign
+    - TrashBoxFlatpack # Forge-Change
 
 - type: latheRecipePack
   id: NFServiceTechfabDeprecated
@@ -142,6 +143,7 @@
       - WelderExperimental
       - JawsOfLife
       - PowerDrill
+      - TrayGoggles # Mono
       - JetpackVoid
       - PowerCellHigh
       - PowerCellMicroreactor

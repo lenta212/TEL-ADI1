@@ -16,7 +16,7 @@
   subgroups:
   - MonoMercenaryJumpsuit # Mono
   - MonoUSSPJumpsuit # Mono
-  - PilotJumpsuit
+  - VGJumpsuit # Mono
   - ContractorJumpsuit
   fallbacks:
   - MercenaryClothingUniformJumpsuitMercenary
@@ -36,7 +36,7 @@
   subgroups:
   - MonoMercenaryBackpack # Mono
   - MonoUSSPBackpack # Mono
-  - PilotBackpack
+  - VGBackpack # Mono
   - ContractorBackpack
   fallbacks:
   - MercenaryClothingBackpackMercenary
@@ -56,7 +56,7 @@
   subgroups:
   - MonoMercenaryOuterClothing # Mono
   - MonoUSSPOuterClothing # Mono
-  - PilotOuterClothing
+  - VGOuterClothing # Mono
   - ContractorOuterClothing
 
 - type: loadoutGroup
@@ -69,7 +69,6 @@
   - MercenaryClothingShoesMagMercenary
   - MercenaryClothingShoesMagSecurity
   subgroups:
-  - PilotShoes
   - ContractorShoes
   fallbacks:
   - MercenaryClothingShoesBootsMercenary
@@ -88,7 +87,7 @@
   - SecurityBeret
   subgroups:
   - MonoUSSPHead # Mono
-  - PilotHead
+  - VGHead # Mono
   - ContractorHead
   # - MonoMercenaryHead # Forge-Change-Del
 
@@ -103,7 +102,8 @@
   - MercenaryClothingHeadsetBrigmedicCommon
   - MercenaryClothingHeadsetAltSecurityCommon
   subgroups:
-  - PilotEars
+  - USSPEars # Mono
+  - VGEars # Mono
   - ContractorEars
 
 - type: loadoutGroup
@@ -116,7 +116,6 @@
   - MercenaryClothingHandsGlovesCombat
   subgroups:
   - MonoMercenaryGloves # Mono
-  - PilotGloves
   - ContractorGloves
 
 - type: loadoutGroup
@@ -125,7 +124,6 @@
   loadouts:
   - MercenaryMercenaryPDA
   subgroups:
-  - PilotPDA
   - ContractorPDA
   fallbacks:
   - MercenaryMercenaryPDA
@@ -139,7 +137,6 @@
   - MercenaryClothingEyesGlassesSunglasses
   subgroups:
   - MonoMercenaryBallisticGoggles # Mono
-  - PilotGlasses
   - ContractorGlasses
 
 - type: loadoutGroup
@@ -150,7 +147,6 @@
   - MercenaryClothingMaskGasSecurity
   - MercenaryClothingMaskDrakeIndustriesWatchdog
   subgroups:
-  - PilotFace
   - ContractorFace
   fallbacks:
   - MercenaryClothingMaskGasMercenary

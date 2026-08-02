@@ -31,6 +31,8 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key: # Shitmed
         type: SurgeryBui
+      enum.ConfigurableEncryptionKeyUiKey.Key: # Forge-Change: configurable encryption key frequency menu.
+        type: ConfigurableEncryptionKeyBoundUserInterface
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -129,8 +131,6 @@
   - type: WeldingHealable
   - type: TTS # Forge-Change
   - type: RetroMonitorView # Mono
-  - type: Addiction # Forge-change
-    enabled: false # idk just safe
 
 - type: entity
   save: false
